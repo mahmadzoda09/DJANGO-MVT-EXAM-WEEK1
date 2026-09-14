@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F7F5F0;
+            color: #171F1B;
+        }
+
+        .wrap {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 72px 24px 80px;
+        }
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 2.2rem;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid #171F1B;
+            padding-bottom: 18px;
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding: 8px 0;
+            border-bottom: 1px solid #DAD6C8;
+        }
+
+        .btn-delete {
+            border: none;
+            border-radius: 3px;
+            padding: 10px 22px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            background-color: #A8721C;
+            color: #fff;
+        }
+
+        .btn-update {
+            border: none;
+            border-radius: 3px;
+            padding: 10px 22px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            background-color: #24463B;
+            color: #fff;
+        }
+
+        .btn-back {
+            border: none;
+            border-radius: 3px;
+            padding: 10px 22px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            background-color: #171F1B;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <h1>{{book.title}} detail!</h1>
+    <p><b>Title:</b> {{book.title}}</p>
+    <p><b>Pages:</b> {{book.pages}}</p>
+    <p><b>Price:</b> {{book.price}}</p>
+    <p><b>Description:</b> {{book.description}}</p>
+    <p><b>Author:</b> {{book.author}}</p>
+    <br>
+    <a href="{% url 'delete' book.id%}"><button class="btn-delete">Delete</button></a>
+    <a href="{% url 'update' book.id%}"><button class="btn-update">Update</button></a>
+    <br><br>
+    <a href="{% url 'book'%}"><button class="btn-back">Back to Books</button></a>
+</body>
+</html>
